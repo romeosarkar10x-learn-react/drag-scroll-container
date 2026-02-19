@@ -26,6 +26,8 @@ export default function DragItem({ dragItem }: { dragItem: DragItemType }) {
         elem.style.width = dragItem.width;
 
         const mouseDownEventListener = (e: MouseEvent) => {
+            e.preventDefault();
+            console.log("mousedown");
             const initialGap = gapElem.style.width;
             const initialPos: PositionType = { x: e.clientX, y: e.clientY };
 
@@ -34,7 +36,6 @@ export default function DragItem({ dragItem }: { dragItem: DragItemType }) {
                 gapElem.style.width = `${Math.max(0, parseMargin(initialGap) + pos.x - initialPos.x)}px`;
             }
 
-            console.log("mousedown");
             document.addEventListener("mousemove", documentMouseMoveEventListener);
 
             document.addEventListener(
