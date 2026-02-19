@@ -1,5 +1,6 @@
-import { defineConfig } from "vite";
+import path from "node:path";
 import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
 
 function getBaseURL(): string {
     const githubRepository = process.env.GITHUB_REPOSITORY;
@@ -15,4 +16,10 @@ function getBaseURL(): string {
 export default defineConfig({
     plugins: [react()],
     base: getBaseURL(),
+
+    resolve: {
+        alias: {
+            "@": path.resolve(__dirname, "src"),
+        },
+    },
 });
