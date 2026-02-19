@@ -16,9 +16,11 @@
         "format": "prettier --write \"**/*.{mjs,ts,tsx,css,scss,json,yml,yaml,html}\""
     },
     "dependencies": {
+        "@tailwindcss/vite": "^4.2.0",
         "prettier": "^3.8.1",
         "react": "^19.2.0",
-        "react-dom": "^19.2.0"
+        "react-dom": "^19.2.0",
+        "tailwindcss": "^4.2.0"
     },
     "devDependencies": {
         "@eslint/js": "^9.39.1",
